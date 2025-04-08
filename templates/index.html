@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {{ toastr.include_jquery() }}
+    {{ toastr.include_toastr_css() }}
+    {{ toastr.message() }}
+</head>
+<body>
+    <h1>Upload a PDF File</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="pdf" accept="application/pdf" required>
+        <button type="submit">Upload PDF</button>
+    </form>
+    {{ toastr.include_toastr_js() }}
+</body>
+</html>
